@@ -1,3 +1,52 @@
 [gd_scene format=3 uid="uid://d1pk5igqfc8np"]
 
+[ext_resource type="PackedScene" uid="uid://j3o0gdjp3xkt" path="res://player/player.tscn" id="1_ff5nr"]
+
+[sub_resource type="Gradient" id="Gradient_eha2c"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ff5nr"]
+gradient = SubResource("Gradient_eha2c")
+width = 32
+height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c831"]
+size = Vector2(32, 32)
+
 [node name="PlayGround" type="Node2D" unique_id=284529378]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1201507628]
+position = Vector2(601.25, 258)
+scale = Vector2(38.671875, 1)
+texture = SubResource("GradientTexture2D_ff5nr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=752357974]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1665108116]
+shape = SubResource("RectangleShape2D_8c831")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=253372083]
+position = Vector2(9, 114)
+rotation = 1.5707964
+scale = Vector2(16.03125, 1)
+texture = SubResource("GradientTexture2D_ff5nr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2" unique_id=620297713]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D" unique_id=1801850188]
+shape = SubResource("RectangleShape2D_8c831")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1297244744]
+position = Vector2(104, 235)
+rotation = 0.42869264
+scale = Vector2(10.2946, 4.16348)
+texture = SubResource("GradientTexture2D_ff5nr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D4" unique_id=1474493864]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4/StaticBody2D" unique_id=1044714366]
+shape = SubResource("RectangleShape2D_8c831")
+
+[node name="Player" parent="." unique_id=33195799 instance=ExtResource("1_ff5nr")]
+position = Vector2(226, 70)

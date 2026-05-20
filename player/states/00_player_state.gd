@@ -7,6 +7,8 @@ var next_state : PlayerState
 #region /// state references
 @onready var run: PlayerStateRun = %Run
 @onready var idle: PlayerStateIdle = %Idle
+@onready var jump: PlayerState = %Jump
+@onready var fall: PlayerState = %Fall
 
 #endregion
 

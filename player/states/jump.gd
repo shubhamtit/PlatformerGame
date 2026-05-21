@@ -2,12 +2,13 @@ class_name PlayerStateJunp extends PlayerState
 
 @export var jump_velocity : float = 450.0
 
+
 func init() -> void:
 	pass
 	
 func enter() -> void:
 	player.add_debug_indicator(Color.GREEN)
-	player.velocity.y -= jump_velocity
+	player.velocity.y =  -jump_velocity
 	pass
 	
 func exit() -> void:

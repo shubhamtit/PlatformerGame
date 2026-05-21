@@ -19,6 +19,7 @@ var previous_state : PlayerState :
 
 var direction : Vector2 = Vector2.ZERO
 var gravity : float = 980
+var gravity_multipler : float = 1.0
 #endregion
 
 
@@ -36,7 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	
 func _physics_process(_delta: float) -> void:
-	velocity.y += gravity * _delta
+	velocity.y += gravity * _delta * gravity_multipler
 	change_state(current_state.physics_process(_delta))
 	move_and_slide()
 	
@@ -100,7 +101,8 @@ func add_debug_indicator(color : Color = Color.RED) -> void:
 	
 	await get_tree().create_timer(3.0).timeout
 	d.queue_free()
-	pass
+	
+	
 	
 	
 	

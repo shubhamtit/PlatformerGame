@@ -40,6 +40,7 @@ script = ExtResource("4_yw30f")
 [node name="Fall" type="Node" parent="States" unique_id=2049610228]
 unique_name_in_owner = true
 script = ExtResource("5_qjkh3")
+coyote_time = 0.125
 
 [node name="Label" type="Label" parent="." unique_id=256261259]
 offset_left = -39.0

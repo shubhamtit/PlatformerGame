@@ -12,6 +12,8 @@ func init() -> void:
 	pass
 	
 func enter() -> void:
+	
+	
 	player.gravity_multipler = fall_gravity_multiplier
 	if player.previous_state == jump:
 		coyote_timer = 0

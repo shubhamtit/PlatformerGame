@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://db8iqw3ur1m0u" path="res://player/states/run.gd" id="3_yw30f"]
 [ext_resource type="Script" uid="uid://djj1ool4b7keo" path="res://player/states/jump.gd" id="4_yw30f"]
 [ext_resource type="Script" uid="uid://d1wbw5xd3k8vl" path="res://player/states/fall.gd" id="5_qjkh3"]
+[ext_resource type="Script" uid="uid://bq8wbn8d6dykv" path="res://player/states/crouch.gd" id="6_g6k8r"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kqu6x"]
 size = Vector2(18, 48)
@@ -12,16 +13,13 @@ size = Vector2(18, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
 size = Vector2(16, 46)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6k8r"]
+size = Vector2(16, 30)
+
 [node name="Player" type="CharacterBody2D" unique_id=33195799]
+collision_layer = 0
+collision_mask = 3
 script = ExtResource("1_oul6g")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1004255527]
-position = Vector2(0, -24)
-texture = SubResource("PlaceholderTexture2D_kqu6x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789451486]
-position = Vector2(0, -23)
-shape = SubResource("RectangleShape2D_oul6g")
 
 [node name="States" type="Node" parent="." unique_id=1316654848]
 
@@ -42,6 +40,23 @@ unique_name_in_owner = true
 script = ExtResource("5_qjkh3")
 coyote_time = 0.125
 
+[node name="Crouch" type="Node" parent="States" unique_id=1370470647]
+unique_name_in_owner = true
+script = ExtResource("6_g6k8r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1004255527]
+position = Vector2(0, -24)
+texture = SubResource("PlaceholderTexture2D_kqu6x")
+
+[node name="CollisionStand" type="CollisionShape2D" parent="." unique_id=1789451486]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_oul6g")
+
+[node name="CollisionCrouch" type="CollisionShape2D" parent="." unique_id=1097163345]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_g6k8r")
+disabled = true
+
 [node name="Label" type="Label" parent="." unique_id=256261259]
 offset_left = -39.0
 offset_top = -68.0
@@ -50,3 +65,7 @@ offset_bottom = -45.0
 theme_override_font_sizes/font_size = 12
 text = "Label"
 horizontal_alignment = 1
+
+[node name="OneWayPlatformRayCast" type="RayCast2D" parent="." unique_id=1538262001]
+target_position = Vector2(0, 4)
+collision_mask = 2

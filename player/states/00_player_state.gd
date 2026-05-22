@@ -9,6 +9,7 @@ var next_state : PlayerState
 @onready var idle: PlayerStateIdle = %Idle
 @onready var jump: PlayerState = %Jump
 @onready var fall: PlayerState = %Fall
+@onready var crouch: Node = %Crouch
 
 #endregion
 

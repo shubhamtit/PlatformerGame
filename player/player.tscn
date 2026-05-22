@@ -75,7 +75,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [24, 25, 26, 27, 28]
@@ -114,6 +114,7 @@ size = Vector2(16, 3)
 [node name="Player" type="CharacterBody2D" unique_id=33195799]
 collision_layer = 0
 collision_mask = 3
+floor_constant_speed = true
 script = ExtResource("1_oul6g")
 
 [node name="States" type="Node" parent="." unique_id=1316654848]

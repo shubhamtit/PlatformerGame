@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://leyc45cqa5rv" path="res://levels/tilesets/forgotten_forest.tres" id="1_fvrtv"]
 [ext_resource type="PackedScene" uid="uid://j3o0gdjp3xkt" path="res://player/player.tscn" id="2_pu3y4"]
+[ext_resource type="Script" uid="uid://bppnxbrj6100a" path="res://general/scripts/level_bound.gd" id="3_1pu88"]
 
 [node name="01" type="Node2D" unique_id=709047084]
 
@@ -19,3 +20,10 @@ position = Vector2(68, 195)
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1693845086]
 tile_set = ExtResource("1_fvrtv")
+
+[node name="LevelBounds" type="Node2D" parent="." unique_id=1071464746]
+position = Vector2(2, -63)
+script = ExtResource("3_1pu88")
+width = 1696
+height = 366
+metadata/_custom_type_script = "uid://bppnxbrj6100a"

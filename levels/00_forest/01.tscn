@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://leyc45cqa5rv" path="res://levels/tilesets/forgotten_forest.tres" id="1_fvrtv"]
 [ext_resource type="PackedScene" uid="uid://j3o0gdjp3xkt" path="res://player/player.tscn" id="2_pu3y4"]
 [ext_resource type="Script" uid="uid://bppnxbrj6100a" path="res://general/scripts/level_bound.gd" id="3_1pu88"]
+[ext_resource type="PackedScene" uid="uid://bruwo71xst14s" path="res://general/level_transition/level_transition.tscn" id="4_vhcel"]
 
 [node name="01" type="Node2D" unique_id=709047084]
 
@@ -16,14 +17,21 @@ tile_map_data = PackedByteArray("AAAAAP//AAAEAAIAAAAAAAAAAAAEAAIAAAAAAAEAAAAEAAI
 tile_set = ExtResource("1_fvrtv")
 
 [node name="Player" parent="." unique_id=33195799 instance=ExtResource("2_pu3y4")]
-position = Vector2(68, 195)
+position = Vector2(1661, 54)
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1693845086]
 tile_set = ExtResource("1_fvrtv")
 
 [node name="LevelBounds" type="Node2D" parent="." unique_id=1071464746]
+z_index = 256
 position = Vector2(2, -63)
 script = ExtResource("3_1pu88")
 width = 1696
 height = 366
 metadata/_custom_type_script = "uid://bppnxbrj6100a"
+
+[node name="LevelTransition" parent="." unique_id=1465191306 instance=ExtResource("4_vhcel")]
+position = Vector2(1699, 74)
+size = 7
+location = 1
+target_level = "uid://cvfcf6qfldb4x"

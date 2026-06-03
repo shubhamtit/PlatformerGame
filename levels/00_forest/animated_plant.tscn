@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b3kuqbtswqh7e"]
+
+[ext_resource type="Texture2D" uid="uid://p4ixdvlq6khk" path="res://assets/forest_map.png" id="1_rsoyq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chwhs"]
+atlas = ExtResource("1_rsoyq")
+region = Rect2(512, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72pnk"]
+atlas = ExtResource("1_rsoyq")
+region = Rect2(544, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdj2u"]
+atlas = ExtResource("1_rsoyq")
+region = Rect2(576, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sv46"]
+atlas = ExtResource("1_rsoyq")
+region = Rect2(608, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08onm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chwhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72pnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdj2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sv46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdj2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72pnk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="AnimatedPlant" type="AnimatedSprite2D" unique_id=307760153]
+sprite_frames = SubResource("SpriteFrames_08onm")
+autoplay = "default"
+frame_progress = 0.4363159
+offset = Vector2(0, -16)

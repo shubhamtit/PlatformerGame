@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://d1u0x24c7drvc"]
+
+[ext_resource type="Texture2D" uid="uid://p4ixdvlq6khk" path="res://assets/forest_map.png" id="1_7x72n"]
+[ext_resource type="Script" uid="uid://p5vpxqn10gji" path="res://general/scripts/light_fliker.gd" id="2_rduvj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rduvj"]
+atlas = ExtResource("1_7x72n")
+region = Rect2(512, 256, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5aub"]
+atlas = ExtResource("1_7x72n")
+region = Rect2(544, 256, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj0dw"]
+atlas = ExtResource("1_7x72n")
+region = Rect2(576, 256, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miyrw"]
+atlas = ExtResource("1_7x72n")
+region = Rect2(608, 256, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fbah"]
+atlas = ExtResource("1_7x72n")
+region = Rect2(640, 256, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rv15y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rduvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5aub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj0dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miyrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fbah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_7x72n"]
+offsets = PackedFloat32Array(0, 0.5173797, 0.8462567, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.71257097, 0, 1, 0.98403144, 0.09912677, 0.0053591104, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rduvj"]
+gradient = SubResource("Gradient_7x72n")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_rduvj"]
+offsets = PackedFloat32Array(0, 0.29937303, 0.5783699, 1)
+colors = PackedColorArray(1, 0.9034872, 0.4421267, 1, 1, 0.44275087, 0, 1, 1, 0.99572945, 0.3982103, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k5aub"]
+gradient = SubResource("Gradient_rduvj")
+use_hdr = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rduvj"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = -0.3
+direction = Vector3(0, -20, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 300.0
+angular_velocity_min = -200.00002
+angular_velocity_max = 199.99998
+gravity = Vector3(0, 98, 0)
+color_ramp = SubResource("GradientTexture1D_k5aub")
+turbulence_enabled = true
+turbulence_influence_max = 0.3
+turbulence_initial_displacement_min = -19.999998
+turbulence_initial_displacement_max = 20.000002
+
+[node name="Torch" type="AnimatedSprite2D" unique_id=271604622]
+sprite_frames = SubResource("SpriteFrames_rv15y")
+autoplay = "default"
+frame = 2
+frame_progress = 0.74377525
+offset = Vector2(0, -32)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1993929731]
+position = Vector2(0, -30)
+energy = 0.5
+texture = SubResource("GradientTexture2D_rduvj")
+script = ExtResource("2_rduvj")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1923736999]
+position = Vector2(-1, -31)
+amount = 3
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_rduvj")

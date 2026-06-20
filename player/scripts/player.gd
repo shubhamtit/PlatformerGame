@@ -18,6 +18,25 @@ const DEBUG_JUMP_INDICATAR = preload("uid://bwt382s3224l7")
 @export var max_fall_velocity : float = 600.0
 #endregion
 
+
+
+
+#region //player stats
+var hp : float = 20
+var max_hp : float = 20
+var dash : bool =  false
+var double_jump : bool =  false
+var ground_slam :  bool = false
+var morph_roll : bool =  false
+
+#endregion
+
+
+
+
+
+
+
 #region ///state machine variables
 var states : Array[PlayerState]
 var current_state : PlayerState :

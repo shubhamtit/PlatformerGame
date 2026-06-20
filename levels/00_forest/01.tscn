@@ -144,11 +144,9 @@ position = Vector2(283, 207)
 texture = SubResource("NoiseTexture2D_chwhs")
 
 [node name="Torch" parent="." unique_id=271604622 instance=ExtResource("8_vdj2u")]
-visible = false
 position = Vector2(64, 226)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=19393395]
-visible = false
 material = SubResource("CanvasItemMaterial_vdj2u")
 position = Vector2(837, 188)
 amount = 50

@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://dmvgixtlg15nh" path="res://material_and_shaders/fog_fade_material.tres" id="7_72pnk"]
 [ext_resource type="PackedScene" uid="uid://f4poe8tuqtj2" path="res://general/player_spawn/player_spawn.tscn" id="8_8sv46"]
 [ext_resource type="PackedScene" uid="uid://d1u0x24c7drvc" path="res://levels/torch.tscn" id="8_vdj2u"]
+[ext_resource type="PackedScene" uid="uid://cm4p1uqyif40q" path="res://general/save_point/save_point.tscn" id="9_8sv46"]
 
 [sub_resource type="Gradient" id="Gradient_chwhs"]
 offsets = PackedFloat32Array(0.26677853, 0.7533557)
@@ -158,3 +159,6 @@ process_material = SubResource("ParticleProcessMaterial_7jd6w")
 
 [node name="PlayerSpawn" parent="." unique_id=680676197 instance=ExtResource("8_8sv46")]
 position = Vector2(72, 222)
+
+[node name="SavePoint" parent="." unique_id=1155744231 instance=ExtResource("9_8sv46")]
+position = Vector2(429, 225)

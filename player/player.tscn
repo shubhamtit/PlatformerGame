@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://d1wbw5xd3k8vl" path="res://player/states/fall.gd" id="5_qjkh3"]
 [ext_resource type="Script" uid="uid://bq8wbn8d6dykv" path="res://player/states/crouch.gd" id="6_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://dyo4j1g7pfm3v" path="res://player/sprits/hero.png" id="7_boad6"]
+[ext_resource type="Script" uid="uid://dej42beb2pujk" path="res://player/scripts/input_hints.gd" id="8_hg6s5"]
+[ext_resource type="Texture2D" uid="uid://doyocyldvjr2f" path="res://assets/gamesystem/sprites/input_icons.png" id="8_rgyib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_boad6"]
 radius = 8.0
@@ -157,6 +159,7 @@ shape = SubResource("CapsuleShape2D_rgyib")
 disabled = true
 
 [node name="Label" type="Label" parent="." unique_id=256261259]
+visible = false
 offset_left = -39.0
 offset_top = -79.0
 offset_right = 41.0
@@ -180,3 +183,11 @@ collision_mask = 2
 [node name="Camera2D" type="Camera2D" parent="." unique_id=169250839]
 process_mode = 3
 position = Vector2(0, -33)
+
+[node name="InputHints" type="Node2D" parent="." unique_id=1554878873]
+position = Vector2(0, -65)
+script = ExtResource("8_hg6s5")
+
+[node name="Sprite2D" type="Sprite2D" parent="InputHints" unique_id=1950520205]
+texture = ExtResource("8_rgyib")
+hframes = 16

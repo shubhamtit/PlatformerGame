@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bppnxbrj6100a" path="res://general/scripts/level_bound.gd" id="2_uqe0m"]
 [ext_resource type="PackedScene" uid="uid://bruwo71xst14s" path="res://general/level_transition/level_transition.tscn" id="3_epyyu"]
 [ext_resource type="PackedScene" uid="uid://f4poe8tuqtj2" path="res://general/player_spawn/player_spawn.tscn" id="4_s2tn3"]
+[ext_resource type="PackedScene" uid="uid://cm4p1uqyif40q" path="res://general/save_point/save_point.tscn" id="5_o5ap7"]
 
 [node name="02" type="Node2D" unique_id=866316940]
 
@@ -42,3 +43,6 @@ target_area_name = "LevelTransition2"
 
 [node name="PlayerSpawn" parent="." unique_id=680676197 instance=ExtResource("4_s2tn3")]
 position = Vector2(53, 174)
+
+[node name="SavePoint" parent="." unique_id=1155744231 instance=ExtResource("5_o5ap7")]
+position = Vector2(435, 194)

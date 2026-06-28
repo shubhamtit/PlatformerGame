@@ -1,0 +1,228 @@
+[gd_scene format=4 uid="uid://drfptfgd3ntyl"]
+
+[ext_resource type="TileSet" uid="uid://leyc45cqa5rv" path="res://levels/tilesets/forgotten_forest.tres" id="1_g2mvh"]
+[ext_resource type="Script" uid="uid://bnyioesdj52y7" path="res://title_screen/title_screen.gd" id="1_vbjqi"]
+[ext_resource type="PackedScene" uid="uid://d1u0x24c7drvc" path="res://levels/torch.tscn" id="2_dxpbd"]
+[ext_resource type="Texture2D" uid="uid://bbp0lhg34dmiw" path="res://assets/gamesystem/sprites/metroidvania_logo.png" id="3_2dq6q"]
+
+[sub_resource type="Animation" id="Animation_2dq6q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0m3ch"]
+resource_name = "loop"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+}
+
+[sub_resource type="Animation" id="Animation_vbjqi"]
+resource_name = "start"
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45000002, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0m3ch"]
+_data = {
+&"RESET": SubResource("Animation_2dq6q"),
+&"loop": SubResource("Animation_0m3ch"),
+&"start": SubResource("Animation_vbjqi")
+}
+
+[node name="TitleScreen" type="CanvasLayer" unique_id=1004326322]
+layer = 5
+script = ExtResource("1_vbjqi")
+
+[node name="Control" type="Control" parent="." unique_id=457121779]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=954776169]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21063334, 0.19840433, 0.19840433, 1)
+
+[node name="TileMap" type="Control" parent="Control" unique_id=312397367]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Control/TileMap" unique_id=1752383963]
+tile_map_data = PackedByteArray("AAACAAEAAAACAAwAAAADAAEAAAACAAwAAAAEAAEAAAACAAwAAAAFAAEAAAACAAwAAAAGAAEAAAACAAwAAAAHAAEAAAACAAwAAAAIAAEAAAACAAwAAAAJAAEAAAACAAwAAAAKAAEAAAACAAwAAAALAAEAAAACAAwAAAAMAAEAAAACAAwAAAANAAEAAAACAA4AAAABAAEAAAAFAA4AAAABAAIAAAAFAA4AAAAAAAEAAAAEAA4AAAAAAAIAAAAEAAwAAAD//wIAAAACAAwAAAD+/wIAAAACAAwAAAANAAIAAAAAAAwAAAAOAAEAAAADAA4AAAAOAAIAAAADAAwAAAAPAAIAAAADAAwAAAAQAAIAAAADAAwAAAD+/wEAAAACAAoAAAD//wEAAAACAAoAAAD+/wAAAAACAAoAAAD//wAAAAACAAoAAAAAAAAAAAACAAoAAAABAAAAAAACAAoAAAACAAAAAAACAAoAAAADAAAAAAACAAoAAAAEAAAAAAACAAoAAAAFAAAAAAACAAoAAAAGAAAAAAACAAoAAAAHAAAAAAACAAoAAAAIAAAAAAACAAoAAAAJAAAAAAACAAoAAAAKAAAAAAACAAoAAAALAAAAAAACAAoAAAAMAAAAAAACAAoAAAANAAAAAAACAAoAAAAOAAAAAAACAAoAAAAPAAAAAAACAAoAAAAQAAAAAAACAAoAAAAPAAEAAAACAAoAAAAQAAEAAAACAAoAAAD+////AAACAAoAAAD/////AAACAAoAAAAAAP//AAACAAoAAAABAP//AAACAAoAAAACAP//AAACAAoAAAADAP//AAACAAoAAAAEAP//AAACAAoAAAAFAP//AAACAAoAAAAGAP//AAACAAoAAAAHAP//AAACAAoAAAAIAP//AAACAAoAAAAJAP//AAACAAoAAAAKAP//AAACAAoAAAALAP//AAACAAoAAAAMAP//AAACAAoAAAANAP//AAACAAoAAAAOAP//AAACAAoAAAAPAP//AAACAAoAAAAQAP//AAACAAoAAAACAAIAAAAHAAwAAAACAAMAAAAJAA0AAAABAAMAAAAJAA0AAAAAAAMAAAAJAA0AAAAAAAQAAAAJAA0AAAABAAQAAAAJAA0AAAACAAQAAAAJAA0AAAAGAAQAAAAJAA0AAAAGAAMAAAAJAA0AAAAGAAIAAAAJAA0AAAAHAAIAAAAJAA0AAAAIAAIAAAAJAA0AAAAIAAMAAAAJAA0AAAAIAAQAAAAJAA0AAAAHAAQAAAAJAA0AAAAHAAMAAAAJAA0AAAAGAAUAAAAJAA0AAAAHAAUAAAAJAA0AAAAIAAUAAAAJAA0AAAAIAAYAAAAJAA0AAAAHAAYAAAAJAA0AAAAGAAYAAAAJAA0AAAAMAAIAAAAJAAwAAAAMAAMAAAAJAA0AAAAMAAQAAAAJAA0AAAAMAAUAAAAJAA0AAAAMAAYAAAAJAA4AAAANAAYAAAAJAA0AAAAOAAYAAAAJAA0AAAAOAAUAAAAJAA0AAAAOAAQAAAAJAA0AAAAOAAMAAAAJAA0AAAANAAMAAAAJAA0AAAANAAQAAAAJAA0AAAANAAUAAAAJAA0AAAAAAAUAAAAJAA0AAAAAAAYAAAAJAA0AAAABAAYAAAAJAA0AAAACAAYAAAAHAA4AAAACAAUAAAAHAA0AAAABAAUAAAAJAA0AAAD+/wMAAAAJAA0AAAD+/wQAAAAJAA0AAAD+/wUAAAAJAA0AAAD+/wYAAAAJAA0AAAD//wYAAAAJAA0AAAD//wUAAAAJAA0AAAD//wQAAAAJAA0AAAD//wMAAAAJAA0AAAADAAIAAAAIAAwAAAADAAMAAAAIAA0AAAADAAQAAAAIAA0AAAADAAUAAAAIAA0AAAADAAYAAAAIAA4AAAAEAAIAAAAJAAwAAAAEAAMAAAAJAA0AAAAEAAQAAAAJAA0AAAAEAAUAAAAJAA0AAAAEAAYAAAAJAA4AAAAFAAIAAAAHAA0AAAAFAAMAAAAHAA0AAAAFAAQAAAAHAA0AAAAFAAUAAAAHAA0AAAAFAAYAAAAHAA0AAAAKAAIAAAAHAAwAAAAKAAMAAAAJAA0AAAAKAAQAAAAJAA0AAAAKAAUAAAAHAA0AAAAKAAYAAAAHAA4AAAALAAIAAAAIAAwAAAALAAMAAAAIAA0AAAALAAQAAAAIAA0AAAALAAUAAAAIAA0AAAALAAYAAAAIAA4AAAAJAAIAAAAHAA0AAAAJAAMAAAAHAA0AAAAJAAQAAAAHAA0AAAAJAAUAAAAHAA0AAAAJAAYAAAAHAA0AAAAPAAMAAAAJAA0AAAAQAAMAAAAJAA0AAAAQAAQAAAAJAA0AAAAQAAUAAAAJAA0AAAAQAAYAAAAJAA0AAAAPAAYAAAAJAA0AAAAPAAUAAAAJAA0AAAAPAAQAAAAJAA0AAAD//wcAAAACAAgAAAD//wgAAAACAAkAAAAAAAcAAAACAAgAAAAAAAgAAAACAAkAAAABAAcAAAACAAgAAAABAAgAAAACAAkAAAACAAcAAAACAAgAAAACAAgAAAACAAkAAAADAAcAAAACAAgAAAADAAgAAAACAAkAAAAEAAcAAAACAAgAAAAEAAgAAAACAAkAAAAFAAcAAAACAAgAAAAFAAgAAAACAAkAAAAGAAcAAAACAAgAAAAGAAgAAAACAAkAAAAHAAcAAAACAAgAAAAHAAgAAAACAAkAAAAIAAcAAAACAAgAAAAIAAgAAAACAAkAAAAJAAcAAAACAAgAAAAJAAgAAAACAAkAAAAKAAcAAAACAAgAAAAKAAgAAAACAAkAAAALAAcAAAACAAgAAAALAAgAAAACAAkAAAAMAAcAAAACAAgAAAAMAAgAAAACAAkAAAANAAcAAAACAAgAAAANAAgAAAACAAkAAAAOAAcAAAACAAgAAAAOAAgAAAACAAkAAAAPAAcAAAACAAgAAAAPAAgAAAACAAkAAAAQAAcAAAACAAgAAAAQAAgAAAACAAkAAAD+/wcAAAACAAgAAAD+/wgAAAACAAkAAAA=")
+tile_set = ExtResource("1_g2mvh")
+
+[node name="Props" type="Node2D" parent="Control/TileMap" unique_id=1278023489]
+
+[node name="Torch" parent="Control/TileMap/Props" unique_id=271604622 instance=ExtResource("2_dxpbd")]
+position = Vector2(71, 228)
+
+[node name="Torch2" parent="Control/TileMap/Props" unique_id=1190311751 instance=ExtResource("2_dxpbd")]
+position = Vector2(412, 228)
+
+[node name="MainMenu" type="VBoxContainer" parent="Control" unique_id=1556912890]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -108.0
+offset_right = 91.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Logo" type="Control" parent="Control/MainMenu" unique_id=549302214]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MainMenu/Logo" unique_id=2031691697]
+position = Vector2(0, 64)
+texture = ExtResource("3_2dq6q")
+hframes = 8
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/MainMenu/Logo" unique_id=1684287612]
+libraries/ = SubResource("AnimationLibrary_0m3ch")
+autoplay = &"start"
+
+[node name="NewGameButton" type="Button" parent="Control/MainMenu" unique_id=196472104]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New Game"
+
+[node name="LoadGameButton" type="Button" parent="Control/MainMenu" unique_id=56205706]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load Game"
+
+[node name="NewGameMenu" type="VBoxContainer" parent="Control" unique_id=1847323928]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -71.0
+offset_right = 91.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/NewGameMenu" unique_id=395831093]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6745098, 0.19607843, 0.19607843, 1)
+text = "Start a new game..."
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Control/NewGameMenu" unique_id=2034866873]
+layout_mode = 2
+
+[node name="NewSlot01" type="Button" parent="Control/NewGameMenu" unique_id=531556324]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Begin Slot 01"
+
+[node name="NewSlot02" type="Button" parent="Control/NewGameMenu" unique_id=1193040602]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Begin Slot 02"
+
+[node name="NewSlot03" type="Button" parent="Control/NewGameMenu" unique_id=257875136]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Begin Slot 03"
+
+[node name="LoadGameMenu" type="VBoxContainer" parent="Control" unique_id=785533892]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -71.0
+offset_right = 91.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/LoadGameMenu" unique_id=677300648]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6745098, 0.19607843, 0.19607843, 1)
+text = "Load a saved game..."
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Control/LoadGameMenu" unique_id=2015297729]
+layout_mode = 2
+
+[node name="LoadSlot01" type="Button" parent="Control/LoadGameMenu" unique_id=1001171730]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load Slot 01"
+
+[node name="LoadSlot02" type="Button" parent="Control/LoadGameMenu" unique_id=1723414873]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load Slot 02"
+
+[node name="LoadSlot03" type="Button" parent="Control/LoadGameMenu" unique_id=626442884]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load Slot 03"

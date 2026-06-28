@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Platformer"
-run/main_scene="uid://544nsvl2y14d"
+run/main_scene="uid://drfptfgd3ntyl"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -32,6 +32,10 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 Player=""
+
+[gui]
+
+theme/custom_font="uid://b4fdxgcwn3l16"
 
 [input]
 
